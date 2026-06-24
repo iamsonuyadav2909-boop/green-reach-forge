@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { LeadFormDialog } from "@/components/site/LeadForm";
 
 function Field({ label, value, setValue, min, max, step, suffix }: { label: string; value: number; setValue: (n: number) => void; min: number; max: number; step?: number; suffix?: string }) {
   return (
@@ -65,6 +67,24 @@ export function EVROI() {
         <Stat label="Payback Period" value={isFinite(payback) ? `${payback.toFixed(1)} yrs` : "—"} />
         <Stat label="5-yr ROI" value={`${roi.toFixed(0)}%`} fill />
         <Stat label="Charger Type" value={type === "DC" ? "DC Fast" : "AC"} />
+        <div className="col-span-2">
+          <LeadFormDialog
+            prefill={{
+              service: type === "DC" ? "ev-commercial" : "ev-home",
+              chargerType: type,
+              chargers: 1,
+              projectCost: chargerCost + installCost,
+              monthlyRevenue: monthlyRev,
+              paybackYears: isFinite(payback) ? Number(payback.toFixed(1)) : undefined,
+              sourceLabel: "EV ROI Calculator",
+            }}
+            trigger={
+              <button type="button" className="btn-primary w-full justify-center">
+                Get Site Survey & Proposal <ArrowRight size={16} />
+              </button>
+            }
+          />
+        </div>
       </div>
     </div>
   );
