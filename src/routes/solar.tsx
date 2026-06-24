@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { LeadFormDialog } from "@/components/site/LeadForm";
 import { Building2, CheckCircle2, ClipboardList, Cog, Factory, Home as HomeIcon, MapPinned, ShieldCheck, Wrench, Zap } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Section, SectionHeader } from "@/components/site/Section";
@@ -121,7 +122,10 @@ function SolarPage() {
         <SectionHeader eyebrow="Solar ROI Calculator" title="Project your 25-year savings and payback." description="Inputs are illustrative — for a precise proposal, book a free site survey." />
         <div className="mt-10"><SolarROI /></div>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link to="/contact" className="btn-primary">Get Detailed Proposal</Link>
+          <LeadFormDialog
+            prefill={{ sourceLabel: "Solar page CTA" }}
+            trigger={<button type="button" className="btn-primary">Get Detailed Proposal</button>}
+          />
           <Link to="/projects" className="btn-outline">See Live Projects</Link>
         </div>
       </Section>
