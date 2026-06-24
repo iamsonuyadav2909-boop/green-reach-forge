@@ -81,9 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "SkySolar Private Limited — Solar EPC, rooftop & industrial solar, EV charging infrastructure and turnkey clean energy solutions across India." },
       { name: "author", content: "SkySolar Private Limited" },
       { property: "og:title", content: "SkySolar — Clean Energy & EV Infrastructure" },
-      { property: "og:description", content: "Solar EPC, rooftop & industrial solar, EV charging infrastructure and turnkey clean energy solutions." },
+      { property: "og:description", content: "SkySolar Private Limited — Solar EPC, rooftop & industrial solar, EV charging infrastructure and turnkey clean energy solutions across India." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "SkySolar — Clean Energy & EV Infrastructure" },
+      { name: "twitter:description", content: "SkySolar Private Limited — Solar EPC, rooftop & industrial solar, EV charging infrastructure and turnkey clean energy solutions across India." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6a97ed0b-40ca-4244-90e3-8bfcad0f698f/id-preview-833042f7--ecbbcd7d-e7e7-4459-99ce-69b534f5a945.lovable.app-1782284100496.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6a97ed0b-40ca-4244-90e3-8bfcad0f698f/id-preview-833042f7--ecbbcd7d-e7e7-4459-99ce-69b534f5a945.lovable.app-1782284100496.png" },
     ],
     links: [
       {
