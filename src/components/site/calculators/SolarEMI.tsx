@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { LeadFormDialog } from "@/components/site/LeadForm";
 
 function NumberInput({ label, value, setValue, min, max, step, suffix }: { label: string; value: number; setValue: (n: number) => void; min: number; max: number; step?: number; suffix?: string }) {
   return (
@@ -65,6 +67,23 @@ export function SolarEMI() {
             <span><span className="inline-block h-2 w-2 rounded-full mr-1.5 align-middle" style={{ background: "var(--brand-blue-2)" }} />Principal</span>
             <span><span className="inline-block h-2 w-2 rounded-full mr-1.5 align-middle" style={{ background: "var(--brand-green-2)" }} />Interest</span>
           </div>
+        </div>
+        <div className="mt-6">
+          <LeadFormDialog
+            prefill={{
+              service: size <= 10 ? "residential-solar" : size <= 100 ? "commercial-solar" : "industrial-solar",
+              systemSize: size,
+              projectCost: cost,
+              downPayment: down,
+              loanTenure: tenure,
+              sourceLabel: "Solar EMI Calculator",
+            }}
+            trigger={
+              <button type="button" className="btn-primary w-full justify-center">
+                Get Custom Quote with these inputs <ArrowRight size={16} />
+              </button>
+            }
+          />
         </div>
       </div>
     </div>
