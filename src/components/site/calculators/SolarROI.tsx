@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { LeadFormDialog } from "@/components/site/LeadForm";
 
 function Field({ label, value, setValue, min, max, step, suffix }: { label: string; value: number; setValue: (n: number) => void; min: number; max: number; step?: number; suffix?: string }) {
   return (
@@ -84,6 +86,20 @@ export function SolarROI() {
             <div><div className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)" }}>{Math.round(size * 60)}</div><div className="text-xs opacity-80">Trees equivalent</div></div>
           </div>
         </div>
+        <LeadFormDialog
+          prefill={{
+            service: size <= 10 ? "residential-solar" : size <= 100 ? "commercial-solar" : "industrial-solar",
+            systemSize: size,
+            projectCost: cost,
+            monthlyBill: bill,
+            sourceLabel: "Solar ROI Calculator",
+          }}
+          trigger={
+            <button type="button" className="btn-primary w-full justify-center">
+              Get a personalised proposal <ArrowRight size={16} />
+            </button>
+          }
+        />
       </div>
     </div>
   );

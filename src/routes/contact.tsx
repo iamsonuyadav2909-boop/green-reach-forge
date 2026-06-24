@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
-import { Section, SectionHeader } from "@/components/site/Section";
+import { Section } from "@/components/site/Section";
 import { PageHero } from "@/components/site/PageHero";
+import { MultiStepLeadForm } from "@/components/site/LeadForm";
 import heroEv from "@/assets/hero-ev.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -20,7 +20,6 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
   return (
     <SiteShell>
       <PageHero
@@ -33,36 +32,7 @@ function ContactPage() {
       <Section tone="white">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
-            <form
-              onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-              className="bg-white border border-border rounded-3xl p-8 md:p-10 shadow-[var(--shadow-card)] grid gap-5"
-            >
-              <h3 className="text-2xl font-bold text-[var(--brand-blue)]" style={{ fontFamily: "var(--font-display)" }}>Request a free consultation</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <Input label="Full name" required />
-                <Input label="Phone" type="tel" required />
-                <Input label="Email" type="email" />
-                <Input label="City / Site location" required />
-              </div>
-              <label className="block">
-                <span className="text-sm font-medium text-[var(--brand-blue)]" style={{ fontFamily: "var(--font-display)" }}>I am interested in</span>
-                <select className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 outline-none focus:border-[var(--brand-green-2)]">
-                  <option>Residential Rooftop Solar</option>
-                  <option>Commercial Solar</option>
-                  <option>Industrial Solar EPC</option>
-                  <option>EV Charging — Home / Society</option>
-                  <option>EV Charging — Commercial / DC Fast</option>
-                  <option>O&M / AMC</option>
-                </select>
-              </label>
-              <label className="block">
-                <span className="text-sm font-medium text-[var(--brand-blue)]" style={{ fontFamily: "var(--font-display)" }}>Tell us about your project</span>
-                <textarea rows={4} className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 outline-none focus:border-[var(--brand-green-2)]" placeholder="Monthly bill, roof area, timelines…" />
-              </label>
-              <button type="submit" className="btn-primary justify-self-start">
-                {sent ? "Thanks — we'll be in touch" : (<>Send Enquiry <Send size={16} /></>)}
-              </button>
-            </form>
+            <MultiStepLeadForm prefill={{ sourceLabel: "Contact page" }} />
           </div>
 
           <aside className="lg:col-span-5 space-y-5">
@@ -94,15 +64,6 @@ function ContactPage() {
         </div>
       </Section>
     </SiteShell>
-  );
-}
-
-function Input({ label, type = "text", required }: { label: string; type?: string; required?: boolean }) {
-  return (
-    <label className="block">
-      <span className="text-sm font-medium text-[var(--brand-blue)]" style={{ fontFamily: "var(--font-display)" }}>{label}{required && <span className="text-[var(--brand-green)]"> *</span>}</span>
-      <input type={type} required={required} className="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 outline-none focus:border-[var(--brand-green-2)]" />
-    </label>
   );
 }
 

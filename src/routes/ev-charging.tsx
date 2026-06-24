@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { LeadFormDialog } from "@/components/site/LeadForm";
 import { BatteryCharging, Building2, CheckCircle2, ClipboardList, Cog, Home as HomeIcon, MapPinned, Plug, Route as RouteIcon, ShieldCheck, Wrench, Zap } from "lucide-react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Section, SectionHeader } from "@/components/site/Section";
@@ -116,7 +117,10 @@ function EVPage() {
         <SectionHeader eyebrow="EV Charger ROI Calculator" title="Model your charging station economics." description="Plug in your hardware cost, utilization and revenue per session to project payback and 5-year ROI." />
         <div className="mt-10"><EVROI /></div>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link to="/contact" className="btn-primary">Get EV Site Survey <BatteryCharging size={16} /></Link>
+          <LeadFormDialog
+            prefill={{ service: "ev-commercial", sourceLabel: "EV page CTA" }}
+            trigger={<button type="button" className="btn-primary">Get EV Site Survey <BatteryCharging size={16} /></button>}
+          />
           <Link to="/projects" className="btn-outline">View EV Projects <Plug size={16} /></Link>
         </div>
       </Section>
