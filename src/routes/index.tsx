@@ -278,6 +278,75 @@ function Home() {
   );
 }
 
+function HeroVisual() {
+  return (
+    <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+      {/* Main image */}
+      <div className="relative rounded-3xl overflow-hidden border border-white/15 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
+        <img
+          src={heroMain}
+          alt="Aerial view of utility-scale solar farm at sunset"
+          className="h-[360px] sm:h-[440px] lg:h-[540px] w-full object-cover"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(7,23,42,0.55) 100%)" }} />
+
+        {/* Live generation badge */}
+        <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-3 py-1.5 text-[11px] font-semibold text-white">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-[#B7E36A] opacity-75 animate-ping" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#B7E36A]" />
+          </span>
+          LIVE · 12.8 MW Generating
+        </div>
+
+        {/* Bottom mini-stat */}
+        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+          <div>
+            <div className="text-[10px] uppercase tracking-widest text-white/70">Industrial EPC</div>
+            <div className="text-lg font-bold" style={{ fontFamily: "var(--font-display)" }}>850 kWp Plant</div>
+          </div>
+          <div className="rounded-xl bg-white/10 backdrop-blur-md border border-white/20 px-3 py-2 text-right">
+            <div className="text-[10px] uppercase tracking-widest text-white/70">Uptime</div>
+            <div className="text-base font-bold text-[#B7E36A]" style={{ fontFamily: "var(--font-display)" }}>99.4%</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Floating card — Rooftop home (top-right, overlapping) */}
+      <div className="hidden sm:block absolute -top-6 -right-4 lg:-right-10 w-40 lg:w-52 rounded-2xl overflow-hidden border border-white/20 shadow-2xl animate-float-slow">
+        <img src={heroCardHome} alt="Smart solar home with EV" className="h-32 lg:h-40 w-full object-cover" width={1024} height={1536} loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,23,42,0.85)] to-transparent" />
+        <div className="absolute bottom-2 left-3 right-3 text-white">
+          <div className="text-[9px] uppercase tracking-widest text-[#B7E36A] font-semibold">Residential</div>
+          <div className="text-xs font-bold leading-tight" style={{ fontFamily: "var(--font-display)" }}>Smart Solar Home</div>
+        </div>
+      </div>
+
+      {/* Floating card — EV (bottom-left, overlapping) */}
+      <div className="hidden sm:block absolute -bottom-6 -left-4 lg:-left-10 w-44 lg:w-56 rounded-2xl overflow-hidden border border-white/20 shadow-2xl animate-float-slow" style={{ animationDelay: "1.5s" }}>
+        <img src={heroCardEv} alt="EV fast charger" className="h-28 lg:h-36 w-full object-cover" width={1536} height={1024} loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(7,23,42,0.85)] to-transparent" />
+        <div className="absolute bottom-2 left-3 right-3 text-white">
+          <div className="text-[9px] uppercase tracking-widest text-[#B7E36A] font-semibold">EV Charging</div>
+          <div className="text-xs font-bold leading-tight" style={{ fontFamily: "var(--font-display)" }}>DC Fast Charger</div>
+        </div>
+      </div>
+
+      {/* Floating glass stat — kWh today */}
+      <div className="hidden lg:flex absolute -left-12 top-1/2 -translate-y-1/2 flex-col items-start gap-1 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 px-4 py-3 shadow-xl animate-float-slow" style={{ animationDelay: "0.7s" }}>
+        <div className="flex items-center gap-2 text-[#B7E36A] text-[10px] uppercase tracking-widest font-semibold">
+          <Sun size={12} /> Today
+        </div>
+        <div className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>4,820 kWh</div>
+        <div className="text-[10px] text-white/60">Clean energy generated</div>
+      </div>
+    </div>
+  );
+}
+
 function EnergyGrid({ faded = false }: { faded?: boolean }) {
   return (
     <svg className={`absolute inset-0 h-full w-full ${faded ? "opacity-20" : "opacity-30"}`} xmlns="http://www.w3.org/2000/svg">
