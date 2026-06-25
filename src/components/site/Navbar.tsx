@@ -33,9 +33,9 @@ export function Navbar() {
         scrolled ? "bg-white/85 backdrop-blur-xl border-b border-border shadow-[0_4px_24px_-12px_rgba(11,58,102,0.15)]" : "bg-transparent"
       }`}
     >
-      <div className="container-page flex items-center justify-between h-18 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <Logo className="h-10 w-auto" />
+      <div className="container-page flex items-center justify-between gap-3 h-16 md:h-20 py-2 md:py-3">
+        <Link to="/" className="flex items-center gap-2 min-w-0 shrink">
+          <Logo className="h-8 md:h-11 w-auto max-w-[180px] sm:max-w-none" />
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
           {NAV.map((item) => {

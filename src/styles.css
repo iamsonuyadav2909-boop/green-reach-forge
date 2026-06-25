@@ -175,7 +175,7 @@
 }
 
 @utility section-pad {
-  padding-block: 5rem;
+  padding-block: 3.5rem;
   @media (min-width: 768px) {
     padding-block: 7rem;
   }
