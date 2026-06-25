@@ -55,8 +55,8 @@ export function Navbar() {
           })}
         </nav>
         <div className="flex items-center gap-2">
-          <a href="tel:+919999999999" className="hidden md:inline-flex btn-outline">
-            <Phone size={16} /> +91 99999 99999
+          <a href="tel:+918085657325" className="hidden md:inline-flex btn-outline">
+            <Phone size={16} /> +91 80856 57325
           </a>
           <Link to="/contact" className="hidden md:inline-flex btn-primary">Get Consultation</Link>
           <button
