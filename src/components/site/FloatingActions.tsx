@@ -4,7 +4,7 @@ export function FloatingActions() {
   return (
     <div className="fixed right-4 bottom-4 z-40 flex flex-col gap-3">
       <a
-        href="https://wa.me/919999999999"
+        href="https://wa.me/918085657325"
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
@@ -14,7 +14,7 @@ export function FloatingActions() {
         <MessageCircle size={22} />
       </a>
       <a
-        href="tel:+919999999999"
+        href="tel:+918085657325"
         aria-label="Call"
         className="h-14 w-14 rounded-full bg-white text-[var(--brand-blue)] border border-border flex items-center justify-center shadow-[0_12px_30px_-12px_rgba(11,58,102,0.35)]"
       >
