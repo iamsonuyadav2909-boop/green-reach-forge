@@ -47,8 +47,8 @@ export function Footer() {
           <h4 className="text-white text-sm font-semibold tracking-widest uppercase mb-5" style={{ color: "#B7E36A" }}>Reach Us</h4>
           <ul className="space-y-4 text-white/80 text-sm">
             <li className="flex gap-3"><MapPin size={16} className="mt-0.5 shrink-0" /><span>SkySolar Private Limited<br/>Bhopal, Madhya Pradesh, India</span></li>
-            <li className="flex gap-3"><Phone size={16} className="mt-0.5" /><a href="tel:+919999999999">+91 99999 99999</a></li>
-            <li className="flex gap-3"><Mail size={16} className="mt-0.5" /><a href="mailto:hello@skysolar.in">hello@skysolar.in</a></li>
+            <li className="flex gap-3"><Phone size={16} className="mt-0.5" /><a href="tel:+918085657325">+91 80856 57325</a></li>
+            <li className="flex gap-3"><Mail size={16} className="mt-0.5" /><a href="mailto:hello@skysolars.in">hello@skysolars.in</a></li>
           </ul>
         </div>
       </div>

@@ -197,7 +197,7 @@ export function MultiStepLeadForm({
           A SkySolar specialist will call you on <strong>{data.phone}</strong> within 24 hours with a tailored proposal.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="btn-primary">Chat on WhatsApp</a>
+          <a href="https://wa.me/918085657325" target="_blank" rel="noreferrer" className="btn-primary">Chat on WhatsApp</a>
           {onClose && <button onClick={onClose} className="btn-outline">Close</button>}
         </div>
       </div>

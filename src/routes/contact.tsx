@@ -37,9 +37,9 @@ function ContactPage() {
 
           <aside className="lg:col-span-5 space-y-5">
             <InfoCard icon={<MapPin size={18} />} title="Headquarters" body={<>SkySolar Private Limited<br/>Bhopal, Madhya Pradesh, India</>} />
-            <InfoCard icon={<Phone size={18} />} title="Call us" body={<a href="tel:+919999999999" className="hover:text-[var(--brand-green)]">+91 99999 99999</a>} />
-            <InfoCard icon={<Mail size={18} />} title="Email" body={<a href="mailto:hello@skysolar.in" className="hover:text-[var(--brand-green)]">hello@skysolar.in</a>} />
-            <InfoCard icon={<MessageCircle size={18} />} title="WhatsApp" body={<a href="https://wa.me/919999999999" className="hover:text-[var(--brand-green)]">Chat with our team</a>} />
+            <InfoCard icon={<Phone size={18} />} title="Call us" body={<a href="tel:+918085657325" className="hover:text-[var(--brand-green)]">+91 80856 57325</a>} />
+            <InfoCard icon={<Mail size={18} />} title="Email" body={<a href="mailto:hello@skysolars.in" className="hover:text-[var(--brand-green)]">hello@skysolars.in</a>} />
+            <InfoCard icon={<MessageCircle size={18} />} title="WhatsApp" body={<a href="https://wa.me/918085657325" className="hover:text-[var(--brand-green)]">Chat with our team</a>} />
 
             <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-card)]">
               <iframe
