@@ -7,6 +7,9 @@ import heroSolar from "@/assets/hero-solar.jpg";
 import heroEv from "@/assets/hero-ev.jpg";
 import engineer from "@/assets/engineer.jpg";
 import evStation from "@/assets/ev-station.jpg";
+import heroMain from "@/assets/hero-main.jpg";
+import heroCardHome from "@/assets/hero-card-home.jpg";
+import heroCardEv from "@/assets/hero-card-ev.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -47,24 +50,41 @@ function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img src={heroSolar} alt="" className="h-full w-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(120deg, rgba(7,23,42,0.92) 0%, rgba(11,58,102,0.78) 45%, rgba(19,94,150,0.35) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(120deg, rgba(7,23,42,0.95) 0%, rgba(11,58,102,0.85) 45%, rgba(19,94,150,0.55) 100%)" }} />
           <EnergyGrid />
+          {/* Decorative glow blobs */}
+          <div className="absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full opacity-40 blur-3xl" style={{ background: "radial-gradient(circle, rgba(183,227,106,0.6), transparent 65%)" }} />
+          <div className="absolute bottom-0 right-0 h-[32rem] w-[32rem] rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, rgba(58,167,109,0.7), transparent 65%)" }} />
         </div>
 
-        <div className="container-page pt-24 pb-20 md:pt-32 md:pb-40 text-white relative">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur px-3 py-1.5 text-xs font-medium tracking-widest uppercase">
-            <Sparkles size={14} className="text-[#B7E36A]" /> Clean Energy · Sustainable Mobility
-          </span>
-          <h1 className="heading-xl mt-6 max-w-4xl !text-white">
-            Powering Tomorrow with <span className="gradient-text" style={{ backgroundImage: "linear-gradient(90deg, #B7E36A, #3AA76D)" }}>Clean Energy</span> & Sustainable Mobility.
-          </h1>
-          <p className="mt-6 max-w-2xl text-white/80 text-base md:text-lg leading-relaxed">
-            SkySolar delivers turnkey Solar EPC and EV charging infrastructure for homes, businesses
-            and industries — engineered for performance, designed for the next 25 years.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-primary">Get Free Consultation <ArrowRight size={16} /></Link>
-            <Link to="/solar" className="btn-ghost-light">Calculate Savings</Link>
+        <div className="container-page pt-20 pb-16 md:pt-28 md:pb-32 text-white relative">
+          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
+            {/* LEFT — copy */}
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur px-3 py-1.5 text-xs font-medium tracking-widest uppercase">
+                <Sparkles size={14} className="text-[#B7E36A]" /> Clean Energy · Sustainable Mobility
+              </span>
+              <h1 className="heading-xl mt-5 !text-white">
+                Powering Tomorrow with <span className="gradient-text" style={{ backgroundImage: "linear-gradient(90deg, #B7E36A, #3AA76D)" }}>Clean Energy</span> & Sustainable Mobility.
+              </h1>
+              <p className="mt-5 max-w-xl text-white/80 text-base md:text-lg leading-relaxed">
+                SkySolar delivers turnkey Solar EPC and EV charging infrastructure for homes, businesses and industries — engineered for performance, designed for the next 25 years.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link to="/contact" className="btn-primary">Get Free Consultation <ArrowRight size={16} /></Link>
+                <Link to="/solar" className="btn-ghost-light">Calculate Savings</Link>
+              </div>
+
+              {/* Trust row */}
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-white/70">
+                <div className="flex items-center gap-2"><BadgeCheck size={16} className="text-[#B7E36A]" /> MNRE Empanelled</div>
+                <div className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#B7E36A]" /> 25-Year Warranty</div>
+                <div className="flex items-center gap-2"><Leaf size={16} className="text-[#B7E36A]" /> 32K T CO₂ Offset</div>
+              </div>
+            </div>
+
+            {/* RIGHT — image collage */}
+            <HeroVisual />
           </div>
 
           {/* Floating stats */}
