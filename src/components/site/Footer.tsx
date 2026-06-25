@@ -5,8 +5,8 @@ import { Logo } from "./Logo";
 export function Footer() {
   return (
     <footer className="bg-[var(--brand-blue)] text-white mt-12">
-      <div className="container-page py-20 grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-5">
+      <div className="container-page py-12 md:py-20 grid grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12">
+        <div className="col-span-2 lg:col-span-5">
           <div className="bg-white inline-block rounded-xl p-3">
             <Logo className="h-10 w-auto" />
           </div>
@@ -43,7 +43,7 @@ export function Footer() {
             <li><Link to="/ev-charging" className="hover:text-white">ROI Calculator</Link></li>
           </ul>
         </div>
-        <div className="lg:col-span-3">
+        <div className="col-span-2 lg:col-span-3">
           <h4 className="text-white text-sm font-semibold tracking-widest uppercase mb-5" style={{ color: "#B7E36A" }}>Reach Us</h4>
           <ul className="space-y-4 text-white/80 text-sm">
             <li className="flex gap-3"><MapPin size={16} className="mt-0.5 shrink-0" /><span>SkySolar Private Limited<br/>Bhopal, Madhya Pradesh, India</span></li>

@@ -51,14 +51,14 @@ function Home() {
           <EnergyGrid />
         </div>
 
-        <div className="container-page pt-24 pb-28 md:pt-32 md:pb-40 text-white relative">
+        <div className="container-page pt-24 pb-20 md:pt-32 md:pb-40 text-white relative">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur px-3 py-1.5 text-xs font-medium tracking-widest uppercase">
             <Sparkles size={14} className="text-[#B7E36A]" /> Clean Energy · Sustainable Mobility
           </span>
           <h1 className="heading-xl mt-6 max-w-4xl !text-white">
             Powering Tomorrow with <span className="gradient-text" style={{ backgroundImage: "linear-gradient(90deg, #B7E36A, #3AA76D)" }}>Clean Energy</span> & Sustainable Mobility.
           </h1>
-          <p className="mt-6 max-w-2xl text-white/80 text-lg leading-relaxed">
+          <p className="mt-6 max-w-2xl text-white/80 text-base md:text-lg leading-relaxed">
             SkySolar delivers turnkey Solar EPC and EV charging infrastructure for homes, businesses
             and industries — engineered for performance, designed for the next 25 years.
           </p>
@@ -68,16 +68,16 @@ function Home() {
           </div>
 
           {/* Floating stats */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl">
+          <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl">
             {[
               { k: "25+ MW", v: "Solar capacity installed" },
               { k: "1,200+", v: "Projects completed" },
               { k: "400+", v: "EV chargers deployed" },
               { k: "98%", v: "Client satisfaction" },
             ].map((s) => (
-              <div key={s.v} className="bg-[rgba(11,58,102,0.55)] p-6">
-                <div className="text-2xl md:text-3xl font-bold" style={{ fontFamily: "var(--font-display)" }}>{s.k}</div>
-                <div className="text-xs uppercase tracking-widest text-white/60 mt-1">{s.v}</div>
+              <div key={s.v} className="bg-[rgba(11,58,102,0.55)] p-4 md:p-6">
+                <div className="text-xl md:text-3xl font-bold" style={{ fontFamily: "var(--font-display)" }}>{s.k}</div>
+                <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/60 mt-1">{s.v}</div>
               </div>
             ))}
           </div>
