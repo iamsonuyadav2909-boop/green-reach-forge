@@ -179,8 +179,6 @@ export function MultiStepLeadForm({
 
   function submit() {
     // No backend wired — surface as success state. Payload kept ready for future server fn.
-    // eslint-disable-next-line no-console
-    console.info("[LeadForm] submission payload", { ...data, _source: data.source });
     setSubmitted(true);
   }
 
